@@ -4,9 +4,9 @@ cls
 
 :input
 set "user.input=placeholder"
-set /p "user.input=!sys.usern!@!sys.pcname! | !sys.path! >> "
+set /p "user.input=!os.usern!@!os.pcname! | !os.path! >> "
 if "!user.input!"=="placeholder" (
-    call "system\messege.bat" redmsg "Please, enter command"
+    call "system\messege.bat" redmsg "Please enter command"
 ) else (
     for /f "tokens=1,2,3" %%A in ("!user.input!") do (
         if "%%A"=="diskinfo" (

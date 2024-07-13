@@ -14,10 +14,10 @@ cls
     echo.
     dir /b home
     echo.
-    set /p "sys.usern=Username >> "
-    if exist "home/!sys.usern!" (
-        call "home/!sys.usern!/userData.bat"
-        if not "!sys.user.password!"=="...none" (
+    set /p "os.usern=Username >> "
+    if exist "home/!os.usern!" (
+        call "home/!os.usern!/userData.bat"
+        if not "!os.user.password!"=="...none" (
             goto :password_chk
         ) else (
             call system/terminal.bat
@@ -39,8 +39,8 @@ goto :main
     echo    ║                                  ║
     echo    ╚══════════════════════════════════╝
     echo.
-    set /p "sys.userpasskey=>>"
-    if "%sys.userpasskey%"=="%user.passkey%" (
+    set /p "os.userpasskey=>>"
+    if "%os.userpasskey%"=="%user.passkey%" (
         call system/terminal.bat
     ) else (
         goto :fn_invalid2
