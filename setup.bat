@@ -7,10 +7,12 @@ echo ==================================================================
 echo                         InterDOS loader
 echo ==================================================================
 echo Created by Interpuce Team, licensed as MIT
-echo Setting required variables...
+echo Setting up OS...
 
 set "os.debug=0"
 set "fs.defaultPath=%~dp0"
+set "fs.path=/"
+set "fs.realPath=%fs.defaultPath%/"
 
 call system/env_var.cmd
 
@@ -30,9 +32,9 @@ echo ==================================================================
 echo                         InterDOS loader
 echo ==================================================================
 echo Created by Interpuce Team, licensed as MIT
-echo Loading OS...
+echo Logging in...
 
-ping localhost -n 2 > nul
+ping localhost -n 1 > nul
 
 cls
 call system/loginSv.bat
