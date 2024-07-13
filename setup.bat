@@ -10,7 +10,7 @@ echo Created by Interpuce Team, licensed as MIT
 echo Setting up OS...
 
 set "os.debug=0"
-set "fs.defaultPath=%~dp0"
+set "fs.defaultPath=%~dp0/home"
 set "fs.path=/"
 set "fs.realPath=%fs.defaultPath%/"
 
