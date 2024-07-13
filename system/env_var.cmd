@@ -1,1 +1,0 @@
-set "sys.pcname=desktop"

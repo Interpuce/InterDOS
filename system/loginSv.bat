@@ -12,34 +12,21 @@ cls
     echo    ║                                  ║
     echo    ╚══════════════════════════════════╝
     echo.
-    dir /b ..\home
-    set /p "sys.usern=usern >> "
-    if exist "..\home\!sys.usern!" (
-        call "..\home\!sys.usern!\userData.bat"
-        if not "!sys.user.password!"==".none.." (
+    dir /b home
+    echo.
+    set /p "sys.usern=Username >> "
+    if exist "home/!sys.usern!" (
+        call "home/!sys.usern!/userData.bat"
+        if not "!sys.user.password!"=="...none" (
             goto :password_chk
         ) else (
-            call system\terminal.bat
+            call system/terminal.bat
         )
     ) else (
         goto :fn_invalid
     )
 
 goto :main
-
-:fn_invalid
-        cls
-        echo.
-        echo    ╔══════════════════════════════════╗
-        echo    ║           Please login           ║
-        echo    ╠══════════════════════════════════╣
-        echo    ║                                  ║
-        echo    ║         Invalid username         ║
-        echo    ║                                  ║
-        echo    ╚══════════════════════════════════╝
-        echo.
-        pause > nul
-        goto :main
 
 :password_chk
     cls
@@ -53,22 +40,36 @@ goto :main
     echo    ╚══════════════════════════════════╝
     echo.
     set /p "sys.userpasskey=>>"
-    if "sys.userpasskey"=="user.passkey" (
-        call system\terminal.bat
+    if "%sys.userpasskey%"=="%user.passkey%" (
+        call system/terminal.bat
     ) else (
         goto :fn_invalid2
     )
 
 :fn_invalid2
-        cls
-        echo.
-        echo    ╔══════════════════════════════════╗
-        echo    ║           Please login           ║
-        echo    ╠══════════════════════════════════╣
-        echo    ║                                  ║
-        echo    ║         Invalid password         ║
-        echo    ║                                  ║
-        echo    ╚══════════════════════════════════╝
-        echo.
-        pause > nul
-        goto :password_chk
+    cls
+    echo.
+    echo    ╔══════════════════════════════════╗
+    echo    ║           Please login           ║
+    echo    ╠══════════════════════════════════╣
+    echo    ║                                  ║
+    echo    ║         Invalid password         ║
+    echo    ║                                  ║
+    echo    ╚══════════════════════════════════╝
+    echo.
+    pause > nul
+    goto :password_chk
+
+:fn_invalid
+cls
+echo.
+echo    ╔══════════════════════════════════╗
+echo    ║           Please login           ║
+echo    ╠══════════════════════════════════╣
+echo    ║                                  ║
+echo    ║         Invalid username         ║
+echo    ║                                  ║
+echo    ╚══════════════════════════════════╝
+echo.
+pause > nul
+goto :main
