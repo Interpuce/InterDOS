@@ -9,6 +9,9 @@ if "!user.input!"=="placeholder" (
     call "system\message.bat" redmsg "Please enter command"
 ) else (
     for /f "tokens=1,2,3,4,5,6,7,8,9,10" %%A in ("!user.input!") do (
+        if "%%A"=="help" (
+            type "system\assets\help.txt"
+        )
         if "%%A"=="shutdown" (
             exit
         )

@@ -1,0 +1,7 @@
+=======================================================
+         InterDOS, created by Interpuce Team
+=======================================================
+A real operating system written in Batch.
+
+Repo:     https://github.com/Interpuce/InterDOS
+Commands: help -c
