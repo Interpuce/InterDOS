@@ -29,8 +29,6 @@ if "%1"=="warn" (
 if "%1"=="info" (
     echo [[94minfo[0m] !string.num2!
     goto :end
-) else (
-    echo [[95m%1[0m] !string.num2!
 )
 
 :end

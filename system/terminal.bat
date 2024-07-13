@@ -2,7 +2,16 @@
 setlocal enableDelayedExpansion
 cls
 
+echo Hello^! This is an InterDOS.
+echo Type `help` to get help^!
+
+if not "!os.usern!"=="root" (
+    echo.
+    call "system\message.bat" warn "You are not running as root. Some things cannot be executed."
+)
+
 :input
+echo.
 set "user.input=placeholder"
 set /p "user.input=!os.usern!@!os.pcname! | !os.path! >> "
 if "!user.input!"=="placeholder" (
