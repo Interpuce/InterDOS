@@ -1,0 +1,1 @@
+set "sys.pcname=desktop"

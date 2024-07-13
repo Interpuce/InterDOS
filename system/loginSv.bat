@@ -12,11 +12,15 @@ cls
     echo    ║                                  ║
     echo    ╚══════════════════════════════════╝
     echo.
+    dir /b ..\home
     set /p "sys.usern=usern >> "
     if exist "..\home\!sys.usern!" (
         call "..\home\!sys.usern!\userData.bat"
-        goto :password_chk
-        call system\terminal.bat
+        if not "!sys.user.password!"==".none.." (
+            goto :password_chk
+        ) else (
+            call system\terminal.bat
+        )
     ) else (
         goto :fn_invalid
     )
@@ -38,6 +42,7 @@ goto :main
         goto :main
 
 :password_chk
+    cls
     echo.
     echo    ╔══════════════════════════════════╗
     echo    ║          Enter password          ║
