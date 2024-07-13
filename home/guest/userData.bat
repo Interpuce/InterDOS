@@ -1,1 +1,1 @@
-set "user.passkey=.none.."
+set "user.passkey=...none"

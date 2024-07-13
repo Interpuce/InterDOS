@@ -1,4 +1,5 @@
 @echo off
+setlocal enableDelayedExpansion
 
 :main
 cls
@@ -7,17 +8,15 @@ cls
     echo    ║           Please login           ║
     echo    ╠══════════════════════════════════╣
     echo    ║                                  ║
-    echo    ║             ◆ Root               ║
-    echo    ║             ◆ Guest              ║
+    echo    ║             ◆ root               ║
+    echo    ║             ◆ guest              ║
     echo    ║                                  ║
     echo    ╚══════════════════════════════════╝
     echo.
-    dir /b home
-    echo.
     set /p "os.usern=Username >> "
-    if exist "home/!os.usern!" (
+    if exist "home/!os.usern!/userData.bat" (
         call "home/!os.usern!/userData.bat"
-        if not "!os.user.password!"=="...none" (
+        if not "!user.passkey!"=="...none" (
             goto :password_chk
         ) else (
             call system/terminal.bat
@@ -39,8 +38,8 @@ goto :main
     echo    ║                                  ║
     echo    ╚══════════════════════════════════╝
     echo.
-    set /p "os.userpasskey=>>"
-    if "%os.userpasskey%"=="%user.passkey%" (
+    set /p "os.userpasskey=>> "
+    if "!os.userpasskey!"=="!user.passkey!" (
         call system/terminal.bat
     ) else (
         goto :fn_invalid2
@@ -50,7 +49,7 @@ goto :main
     cls
     echo.
     echo    ╔══════════════════════════════════╗
-    echo    ║           Please login           ║
+    echo    ║              Warning             ║
     echo    ╠══════════════════════════════════╣
     echo    ║                                  ║
     echo    ║         Invalid password         ║
@@ -64,7 +63,7 @@ goto :main
 cls
 echo.
 echo    ╔══════════════════════════════════╗
-echo    ║           Please login           ║
+echo    ║             Warning              ║
 echo    ╠══════════════════════════════════╣
 echo    ║                                  ║
 echo    ║         Invalid username         ║

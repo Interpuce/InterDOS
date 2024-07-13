@@ -1,0 +1,1 @@
+set "os.pcname=fresh-pc"
