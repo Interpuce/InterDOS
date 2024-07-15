@@ -37,4 +37,4 @@ echo Logging in...
 ping localhost -n 1 > nul
 
 cls
-call system/loginSv.bat
+call system/login.bat
