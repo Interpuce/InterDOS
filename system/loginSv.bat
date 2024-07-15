@@ -63,7 +63,7 @@ goto :main
 cls
 echo.
 echo    ╔══════════════════════════════════╗
-echo    ║             Warning              ║
+echo    ║              Warning             ║
 echo    ╠══════════════════════════════════╣
 echo    ║                                  ║
 echo    ║         Invalid username         ║
