@@ -8,7 +8,7 @@ echo ==================================================================
 echo                         InterDOS loader
 echo ==================================================================
 echo Created by Interpuce Team, licensed as MIT
-echo Setting up OS...
+echo Setting up enverioment variables...
 
 set "os.debug=0"
 set "fs.defaultPath=%~dp0/home"
