@@ -25,6 +25,11 @@ echo ==================================================================
 echo Created by Interpuce Team, licensed as MIT
 echo Loading drivers...
 
+echo.
+echo NOTICE: These drivers aren't actual drivers loaded by the
+echo          operating system. They are "drivers" required by the 
+echo          InterDOS subsystem.
+
 call "system/drivers/utf8.cmd"
 
 cls
